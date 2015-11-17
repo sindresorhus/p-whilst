@@ -1,0 +1,40 @@
+{
+  "name": "promise-whilst",
+  "version": "0.0.0",
+  "description": "Calls a function repeatedly while a condition returns true and then resolves the promise",
+  "license": "MIT",
+  "repository": "sindresorhus/promise-whilst",
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com"
+  },
+  "engines": {
+    "node": ">=0.12.0"
+  },
+  "scripts": {
+    "test": "xo && ava"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "promise",
+    "promises",
+    "whilst",
+    "while",
+    "loop",
+    "wait",
+    "condition",
+    "conditional"
+  ],
+  "devDependencies": {
+    "ava": "*",
+    "xo": "*"
+  },
+  "xo": {
+    "ignores": [
+      "test.js"
+    ]
+  }
+}
