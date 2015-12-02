@@ -32,7 +32,7 @@ promiseWhilst(() => {
 
 ### promiseWhilst(condition, action)
 
-Executes `action` repeatedly while `condition` returns `true` and then resolves the promise.Rejects if `action` returns a promise that rejects or if an error is thrown anywhere.
+Executes `action` repeatedly while `condition` returns `true` and then resolves the promise. Rejects if `action` returns a promise that rejects or if an error is thrown anywhere.
 
 #### condition
 
