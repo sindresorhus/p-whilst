@@ -1,9 +1,7 @@
 'use strict';
 
 function wrap(fn) {
-	return new Promise(function (resolve) {
-		resolve(fn());
-	});
+	return Promise.resolve(fn());
 }
 
 module.exports = function (condition, action) {
