@@ -10,7 +10,7 @@ test('whilst', async t => {
 	});
 
 	t.is(counter, 7);
-	t.same(result, [0, 1, 2, 3, 4, 5, 6]);
+	t.deepEqual(result, [0, 1, 2, 3, 4, 5, 6]);
 });
 
 test('works with action returning a promise', async t => {
@@ -25,7 +25,7 @@ test('works with action returning a promise', async t => {
 	);
 
 	t.is(counter, 7);
-	t.same(result, [0, 1, 2, 3, 4, 5, 6]);
+	t.deepEqual(result, [0, 1, 2, 3, 4, 5, 6]);
 });
 
 test('stops on error', async t => {
@@ -50,5 +50,5 @@ test('stops on error', async t => {
 	}
 
 	t.is(counter, 7);
-	t.same(result, [0, 1, 2, 3, 4, 5, 6]);
+	t.deepEqual(result, [0, 1, 2, 3, 4, 5, 6]);
 });
