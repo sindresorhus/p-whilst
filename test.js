@@ -1,11 +1,11 @@
 import test from 'ava';
-import fn from './';
+import m from './';
 
 test('whilst', async t => {
 	const result = [];
 	let counter = 0;
 
-	await fn(() => result.length < 7, () => {
+	await m(() => result.length < 7, () => {
 		result.push(counter++);
 	});
 
@@ -17,7 +17,7 @@ test('works with action returning a promise', async t => {
 	const result = [];
 	let counter = 0;
 
-	await fn(() => result.length < 7, () =>
+	await m(() => result.length < 7, () =>
 		new Promise(resolve => {
 			result.push(counter++);
 			resolve();
@@ -32,7 +32,7 @@ test('stops on error', async t => {
 	const result = [];
 	let counter = 0;
 
-	const prom = fn(() => result.length < 7, () =>
+	const prom = m(() => result.length < 7, () =>
 		new Promise(resolve => {
 			if (counter === 7) {
 				throw new Error('BAAD');

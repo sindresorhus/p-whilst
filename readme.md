@@ -36,13 +36,13 @@ Executes `action` repeatedly while `condition` returns `true` and then resolves 
 
 #### condition
 
-Type: `function`
+Type: `Function`
 
-Should return a boolean of whether to continue.
+Expected to return a boolean of whether to continue.
 
 #### action
 
-Type: `function`
+Type: `Function`
 
 Action to run for each iteration.
 
