@@ -1,4 +1,4 @@
-# promise-whilst [![Build Status](https://travis-ci.org/sindresorhus/promise-whilst.svg?branch=master)](https://travis-ci.org/sindresorhus/promise-whilst)
+# p-whilst [![Build Status](https://travis-ci.org/sindresorhus/p-whilst.svg?branch=master)](https://travis-ci.org/sindresorhus/p-whilst)
 
 > Calls a function repeatedly while a condition returns true and then resolves the promise
 
@@ -6,18 +6,18 @@
 ## Install
 
 ```
-$ npm install --save promise-whilst
+$ npm install --save p-whilst
 ```
 
 
 ## Usage
 
 ```js
-const promiseWhilst = require('promise-whilst');
+const pWhilst = require('p-whilst');
 
 let count = 0;
 
-promiseWhilst(() => {
+pWhilst(() => {
 	return count < 5;
 }, () => {
 	count++;
@@ -30,7 +30,7 @@ promiseWhilst(() => {
 
 ## API
 
-### promiseWhilst(condition, action)
+### pWhilst(condition, action)
 
 Executes `action` repeatedly while `condition` returns `true` and then resolves the promise. Rejects if `action` returns a promise that rejects or if an error is thrown anywhere.
 
@@ -49,6 +49,12 @@ Action to run for each iteration.
 You can return a promise and it will be handled.
 
 
+## Related
+
+- [p-wait-for](https://github.com/sindresorhus/p-wait-for) - Wait for a condition to be true
+- [More…](https://github.com/sindresorhus/promise-fun)
+
+
 ## License
 
-MIT © [Sindre Sorhus](http://sindresorhus.com)
+MIT © [Sindre Sorhus](https://sindresorhus.com)

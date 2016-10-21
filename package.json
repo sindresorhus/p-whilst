@@ -1,9 +1,9 @@
 {
-  "name": "promise-whilst",
+  "name": "p-whilst",
   "version": "0.1.0",
   "description": "Calls a function repeatedly while a condition returns true and then resolves the promise",
   "license": "MIT",
-  "repository": "sindresorhus/promise-whilst",
+  "repository": "sindresorhus/p-whilst",
   "author": {
     "name": "Sindre Sorhus",
     "email": "sindresorhus@gmail.com",
@@ -20,13 +20,16 @@
   ],
   "keywords": [
     "promise",
-    "promises",
     "whilst",
     "while",
     "loop",
     "wait",
     "condition",
-    "conditional"
+    "conditional",
+    "async",
+    "await",
+    "promises",
+    "bluebird"
   ],
   "devDependencies": {
     "ava": "*",
