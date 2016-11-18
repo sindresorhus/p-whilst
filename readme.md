@@ -51,6 +51,7 @@ You can return a promise and it will be handled.
 
 ## Related
 
+- [p-forever](https://github.com/sindresorhus/p-forever) - Run promise-returning & async functions repeatedly until you end it
 - [p-wait-for](https://github.com/sindresorhus/p-wait-for) - Wait for a condition to be true
 - [More…](https://github.com/sindresorhus/promise-fun)
 
