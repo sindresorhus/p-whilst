@@ -1,12 +1,14 @@
 # p-whilst [![Build Status](https://travis-ci.org/sindresorhus/p-whilst.svg?branch=master)](https://travis-ci.org/sindresorhus/p-whilst)
 
-> Calls a function repeatedly while a condition returns true and then resolves the promise
+> While a condition returns true, calls a function repeatedly, and then resolves the promise
+
+Think async version of the [`while` statement](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/while).
 
 
 ## Install
 
 ```
-$ npm install --save p-whilst
+$ npm install p-whilst
 ```
 
 
@@ -32,13 +34,13 @@ pWhilst(() => {
 
 ### pWhilst(condition, action)
 
-Executes `action` repeatedly while `condition` returns `true` and then resolves the promise. Rejects if `action` returns a promise that rejects or if an error is thrown anywhere.
+While `condition` returns `true`, executes `action` repeatedly, and then resolves the promise. Rejects if `action` returns a promise that rejects or if an error is thrown anywhere.
 
 #### condition
 
 Type: `Function`
 
-Expected to return a boolean of whether to continue.
+Expected to return a boolean of whether to execute `action`.
 
 #### action
 
@@ -51,6 +53,7 @@ You can return a promise and it will be handled.
 
 ## Related
 
+- [p-do-whilst](https://github.com/sindresorhus/p-do-whilst) - Calls a function repeatedly while a condition returns true and then resolves the promise
 - [p-forever](https://github.com/sindresorhus/p-forever) - Run promise-returning & async functions repeatedly until you end it
 - [p-wait-for](https://github.com/sindresorhus/p-wait-for) - Wait for a condition to be true
 - [More…](https://github.com/sindresorhus/promise-fun)

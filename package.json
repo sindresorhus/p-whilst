@@ -1,41 +1,38 @@
 {
-  "name": "p-whilst",
-  "version": "1.0.0",
-  "description": "Calls a function repeatedly while a condition returns true and then resolves the promise",
-  "license": "MIT",
-  "repository": "sindresorhus/p-whilst",
-  "author": {
-    "name": "Sindre Sorhus",
-    "email": "sindresorhus@gmail.com",
-    "url": "sindresorhus.com"
-  },
-  "engines": {
-    "node": ">=4"
-  },
-  "scripts": {
-    "test": "xo && ava"
-  },
-  "files": [
-    "index.js"
-  ],
-  "keywords": [
-    "promise",
-    "whilst",
-    "while",
-    "loop",
-    "wait",
-    "condition",
-    "conditional",
-    "async",
-    "await",
-    "promises",
-    "bluebird"
-  ],
-  "devDependencies": {
-    "ava": "*",
-    "xo": "*"
-  },
-  "xo": {
-    "esnext": true
-  }
+	"name": "p-whilst",
+	"version": "1.0.0",
+	"description": "While a condition returns true, calls a function repeatedly, and then resolves the promise",
+	"license": "MIT",
+	"repository": "sindresorhus/p-whilst",
+	"author": {
+		"name": "Sindre Sorhus",
+		"email": "sindresorhus@gmail.com",
+		"url": "sindresorhus.com"
+	},
+	"engines": {
+		"node": ">=4"
+	},
+	"scripts": {
+		"test": "xo && ava"
+	},
+	"files": [
+		"index.js"
+	],
+	"keywords": [
+		"promise",
+		"whilst",
+		"while",
+		"loop",
+		"wait",
+		"condition",
+		"conditional",
+		"async",
+		"await",
+		"promises",
+		"bluebird"
+	],
+	"devDependencies": {
+		"ava": "*",
+		"xo": "*"
+	}
 }
