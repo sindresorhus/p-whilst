@@ -5,7 +5,7 @@ const wrap = fn => new Promise(resolve => {
 });
 
 module.exports = (condition, action) => wrap(function loop() {
-	if (condition()) {
+	if (condition.apply(null, arguments)) {
 		return wrap(action).then(loop);
 	}
 });
