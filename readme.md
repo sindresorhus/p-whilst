@@ -38,7 +38,8 @@ While `condition` returns `true`, executes `action` repeatedly, and then resolve
 
 #### condition
 
-Type: `Function`
+Type: `Function`<br>
+Arguments: Whatever the `action` function returns
 
 Expected to return a boolean of whether to execute `action`.
 

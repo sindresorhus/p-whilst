@@ -16,6 +16,20 @@ test('main', async t => {
 	t.deepEqual(result, [0, 1, 2, 3, 4, 5, 6]);
 });
 
+test('condition receives action result', async t => {
+	const result = [];
+
+	await m(
+		r => r === undefined || r.length < 7,
+		() => {
+			result.push(result.length);
+			return result;
+		}
+	);
+
+	t.deepEqual(result, [0, 1, 2, 3, 4, 5, 6]);
+});
+
 test('works with action returning a promise', async t => {
 	const result = [];
 	let counter = 0;
