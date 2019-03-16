@@ -17,9 +17,9 @@ $ npm install p-whilst
 ```js
 const pWhilst = require('p-whilst');
 
-let count = 0;
-
 (async () => {
+	let count = 0;
+
 	await pWhilst(
 		() => count < 5,
 		() => count++
@@ -40,7 +40,7 @@ While `condition` returns `true`, executes `action` repeatedly, and then resolve
 #### condition
 
 Type: `Function`<br>
-Arguments: Whatever the `action` function returns
+Arguments: The value the `action` function returns
 
 Expected to return a boolean of whether to execute `action`.
 
