@@ -1,11 +1,14 @@
 'use strict';
 
-const wrap = fn => new Promise(resolve => {
-	resolve(fn());
-});
+const pWhilst = async (condition, action) => {
+	const loop = async actionResult => {
+		if (condition(actionResult)) {
+			return loop(await action());
+		}
+	};
 
-module.exports = (condition, action) => wrap(function loop(actionResult) {
-	if (condition(actionResult)) {
-		return wrap(action).then(loop);
-	}
-});
+	return loop();
+};
+
+module.exports = pWhilst;
+module.exports.default = pWhilst;

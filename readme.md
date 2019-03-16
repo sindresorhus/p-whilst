@@ -19,14 +19,15 @@ const pWhilst = require('p-whilst');
 
 let count = 0;
 
-pWhilst(() => {
-	return count < 5;
-}, () => {
-	count++;
-}).then(() => {
+(async () => {
+	await pWhilst(
+		() => count < 5,
+		() => count++
+	);
+
 	console.log(count);
 	//=> 5
-});
+})();
 ```
 
 
