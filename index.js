@@ -11,4 +11,5 @@ const pWhilst = async (condition, action) => {
 };
 
 module.exports = pWhilst;
+// TODO: Remove this for the next major release
 module.exports.default = pWhilst;
