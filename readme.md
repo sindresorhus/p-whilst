@@ -1,4 +1,4 @@
-# p-whilst [![Build Status](https://travis-ci.org/sindresorhus/p-whilst.svg?branch=master)](https://travis-ci.org/sindresorhus/p-whilst)
+# p-whilst
 
 > While a condition returns true, calls a function repeatedly, and then resolves the promise
 
