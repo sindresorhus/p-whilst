@@ -1,6 +1,6 @@
 {
 	"name": "p-whilst",
-	"version": "2.1.0",
+	"version": "3.0.0",
 	"description": "While a condition returns true, calls a function repeatedly, and then resolves the promise",
 	"license": "MIT",
 	"repository": "sindresorhus/p-whilst",
