@@ -1,6 +1,4 @@
-'use strict';
-
-const pWhilst = async (condition, action) => {
+export default async function pWhilst(condition, action) {
 	const loop = async actionResult => {
 		if (condition(actionResult)) {
 			return loop(await action());
@@ -8,8 +6,4 @@ const pWhilst = async (condition, action) => {
 	};
 
 	return loop();
-};
-
-module.exports = pWhilst;
-// TODO: Remove this for the next major release
-module.exports.default = pWhilst;
+}
