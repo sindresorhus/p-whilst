@@ -37,7 +37,7 @@ While `condition` returns `true`, executes `action` repeatedly, and then resolve
 Type: `Function`\
 Arguments: The value the `action` function returns
 
-Expected to return a boolean of whether to execute `action`.
+Expected to return a boolean or a Promise of a boolean that indicates whether to execute `action`.
 
 #### action
 
