@@ -1,6 +1,6 @@
 export default async function pWhilst(condition, action) {
 	const loop = async actionResult => {
-		if (condition(actionResult)) {
+		if (await condition(actionResult)) {
 			return loop(await action());
 		}
 	};

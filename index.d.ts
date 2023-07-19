@@ -20,6 +20,6 @@ console.log(count);
 ```
 */
 export default function pWhilst<ValueType>(
-	condition: (value: ValueType | undefined) => boolean,
+	condition: (value: ValueType | undefined) => PromiseLike<boolean> | boolean,
 	action: () => ValueType | PromiseLike<ValueType>
 ): Promise<void>;
