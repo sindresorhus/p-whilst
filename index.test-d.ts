@@ -9,6 +9,13 @@ expectType<Promise<void>>(
 			expectType<number | undefined>(currentCount);
 			return currentCount === undefined ? true : currentCount < 5;
 		},
-		() => count++
-	)
+		() => count++,
+	),
+);
+
+expectType<Promise<void>>(
+	pWhilst(
+		async () => count < 5,
+		() => count++,
+	),
 );

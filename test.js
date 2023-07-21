@@ -9,7 +9,7 @@ test('main', async t => {
 		() => result.length < 7,
 		() => {
 			result.push(counter++);
-		}
+		},
 	);
 
 	t.is(counter, 7);
@@ -28,7 +28,7 @@ test('calling sequence is correct', async t => {
 		() => {
 			sequence.push(`action${counter}`);
 			counter++;
-		}
+		},
 	);
 
 	t.is(counter, 2);
@@ -37,7 +37,7 @@ test('calling sequence is correct', async t => {
 		'action0',
 		'predicate1',
 		'action1',
-		'predicate2'
+		'predicate2',
 	]);
 });
 
@@ -49,7 +49,7 @@ test('condition receives action result', async t => {
 		() => {
 			result.push(result.length);
 			return result;
-		}
+		},
 	);
 
 	t.deepEqual(result, [0, 1, 2, 3, 4, 5, 6]);
@@ -61,10 +61,11 @@ test('works with action returning a promise', async t => {
 
 	await pWhilst(
 		() => result.length < 7,
-		() => new Promise(resolve => {
-			result.push(counter++);
-			resolve();
-		})
+		() =>
+			new Promise(resolve => {
+				result.push(counter++);
+				resolve();
+			}),
 	);
 
 	t.is(counter, 7);
@@ -77,17 +78,40 @@ test('stops on error', async t => {
 
 	const promise = pWhilst(
 		() => result.length < 10,
-		() => new Promise(resolve => {
-			if (counter === 7) {
-				throw new Error('BAAD');
-			}
+		() =>
+			new Promise(resolve => {
+				if (counter === 7) {
+					throw new Error('BAAD');
+				}
 
-			result.push(counter++);
-			resolve();
-		})
+				result.push(counter++);
+				resolve();
+			}),
 	);
 
 	await t.throwsAsync(promise, {message: 'BAAD'});
+	t.is(counter, 7);
+	t.deepEqual(result, [0, 1, 2, 3, 4, 5, 6]);
+});
+
+test('works with condition returning a promise', async t => {
+	const result = [];
+	let counter = 0;
+
+	const checkServer = () =>
+		new Promise(resolve => {
+			setTimeout(() => {
+				resolve(counter < 7);
+			}, 10);
+		});
+
+	await pWhilst(
+		() => checkServer(),
+		() => {
+			result.push(counter++);
+		},
+	);
+
 	t.is(counter, 7);
 	t.deepEqual(result, [0, 1, 2, 3, 4, 5, 6]);
 });
