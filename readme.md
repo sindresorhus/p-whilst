@@ -28,20 +28,21 @@ console.log(count);
 
 ## API
 
-### pWhilst(condition, action)
+### pWhilst(condition, action, initialValue?)
 
-While `condition` returns `true`, executes `action` repeatedly, and then resolves the promise. Rejects if `action` returns a promise that rejects or if an error is thrown anywhere.
+While `condition` returns `true`, executes `action` repeatedly, and then resolves the promise to the result of the last call to `action`. Rejects if `action` returns a promise that rejects or if an error is thrown anywhere.
 
 #### condition
 
-Type: `Function`\
-Arguments: The value the `action` function returns
+Type: `Function`
+Arguments: The value the `action` function returns or `initialValue` for the first iteration.
 
 Expected to return a `boolean` or a `Promise<boolean>` that indicates whether to execute `action`.
 
 #### action
 
 Type: `Function`
+Arguments: The value the last call to `action` function returns.
 
 Action to run for each iteration.
 
