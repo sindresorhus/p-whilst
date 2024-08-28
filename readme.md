@@ -6,8 +6,8 @@ Think async version of the [`while` statement](https://developer.mozilla.org/en-
 
 ## Install
 
-```
-$ npm install p-whilst
+```sh
+npm install p-whilst
 ```
 
 ## Usage
