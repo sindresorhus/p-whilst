@@ -3,7 +3,7 @@ import pWhilst from './index.js';
 
 let count = 0;
 
-expectType<Promise<void>>(
+expectType<Promise<number>>(
 	pWhilst(
 		currentCount => {
 			expectType<number | undefined>(currentCount);
@@ -13,7 +13,7 @@ expectType<Promise<void>>(
 	),
 );
 
-expectType<Promise<void>>(
+expectType<Promise<number>>(
 	pWhilst(
 		async () => count < 5,
 		() => count++,

@@ -115,3 +115,19 @@ test('works with condition returning a promise', async t => {
 	t.is(counter, 7);
 	t.deepEqual(result, [0, 1, 2, 3, 4, 5, 6]);
 });
+
+test('accepts an initial value', async t => {
+	const result = [];
+
+	const counter = await pWhilst(
+		async () => result.length < 7,
+		async currentCount => {
+			result.push(currentCount);
+			return currentCount + 1;
+		},
+		2,
+	);
+
+	t.is(counter, 9);
+	t.deepEqual(result, [2, 3, 4, 5, 6, 7, 8]);
+});
